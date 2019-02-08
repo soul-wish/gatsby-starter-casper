@@ -15,11 +15,15 @@ This starter also serves as example for the [Gatsby-Pagination](https://github.c
 
 ![Screenshot](docs/screenshot.png)
 
-## GatsbyJS V1
+## GatsbyJS V2
+This starter currently supports GatsbyJS version 2, which brings progressive web app features such as automatic code and data splitting (by route), prefetching, with service worker/offline-first support and PRPL pattern.
 
-This starter is based on GatsbyJS V1, which brings progressive web app features such as automatic code and data splitting (by route), prefetching, with service worker/offline-first support and PRPL pattern.
+> More information on Gatsby can be found [here](https://www.gatsbyjs.org/).
 
-More information in the [announcement](https://www.gatsbyjs.org/blog/gatsby-first-beta-release/).
+### GatsbyJS legacy support
+This project uses Semantic Versioning which align with major version of GatsbyJS. Thus, GatsbyJS v1 support can be found in 1.x.x releases of this starter, while GatsbyJS v2 support will be found in 2.x.x releases.
+
+> Special thanks to [hnspn](https://github.com/hnspn) for migration the project to support Gatsby v2. 🤘
 
 ## Features
 
@@ -53,7 +57,7 @@ More information in the [announcement](https://www.gatsbyjs.org/blog/gatsby-firs
 * Google Analytics support
 * NPM scripts for GitHub Pages deployment
 * Social features (uncomment code to use)
-  * Twitter tweet button 
+  * Twitter tweet button
   * Facebook share/share count
   * Google+ share button
   * easily to add more!
@@ -84,18 +88,15 @@ Install this starter (assuming [Gatsby](https://github.com/gatsbyjs/gatsby/) is 
 
 ```sh
 gatsby new YourProjectName https://github.com/haysclark/gatsby-starter-casper
-npm install # or yarn install
-npm run develop # or gatsby develop
+gatsby develop
 ```
 
-Or you can fork the project, make your changes there and merge new features when needed.
-
-Alternatively:
+Alternatively, you can clone the repo or a fork of the repo and install it manually.
 
 ```sh
 git clone https://github.com/haysclark/gatsby-starter-casper YourProjectName # Clone the project
 cd YourProjectname
-rm -rf .git # So you can have your own changes stored in VCS.
+rm -rf .git # Optional, you can leave the .git history for future rebasing
 npm install # or yarn install
 npm run develop # or gatsby develop
 ```
@@ -168,6 +169,16 @@ npm run develop # or gatsby develop
  ```
 
  WARNING: Make sure to edit `static/robots.txt` to include your domain for the sitemap!
+
+## Content
+
+### Posts
+
+Posts are authored using Markdown and include some optional YAML frontmatter data properties.  Each post should have a separate folder for the .md file in addition to any images or other media related to that post.  Posts are stored in a subfolder in the ```/content/``` directory; the target subfolder is set by the _blogPostDir_ property in _SiteConfig.js_.
+
+### Authors
+
+Each post can reference the author of the post, if the author is not set the default author will be used; which is controlled by the _blogAuthorId_ property in _SiteConfig.js_.  All authors, including the default author (aka _blodAuthorId_) must have an author JSON file.  These JSON files MUST be stored in a folder names ```authors```, for Gatsby to parse them correctly.  The location of this ```authors``` folder can be controlled by the _blogAuthorDir_ property in _SiteConfig.js_. It IS possible to have the ```authors``` folder inside the  _blogPostDir_ folder.
 
 ## Contributing
 
